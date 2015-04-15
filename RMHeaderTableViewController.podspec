@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = "HeaderTableViewController"
+  s.name         = "RMHeaderTableViewController"
   s.version      = "0.1"
   s.summary      = "TableViewController with flexible top viewcontroller"
   s.description  = "Add any custom viewcontroller on the top of your table view with flexible sizing when stretching the top"
