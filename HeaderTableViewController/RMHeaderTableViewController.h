@@ -16,5 +16,7 @@
 - (void)setupInitialState NS_REQUIRES_SUPER;
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView NS_REQUIRES_SUPER;
 
+- (instancetype)initWithStyle:(UITableViewStyle)style;
+
 @end
 

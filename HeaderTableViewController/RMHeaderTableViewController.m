@@ -5,9 +5,26 @@
 
 #import "RMHeaderTableViewController.h"
 
+@interface RMHeaderTableViewController ()
+
+@property (nonatomic) UITableViewStyle tableViewStyle;
+
+@end
+
 @implementation RMHeaderTableViewController
 
 #pragma mark -
+
+- (instancetype)initWithStyle:(UITableViewStyle)style
+{
+    self = [super init];
+    if(self)
+    {
+        [self setupInitialState];
+        self.tableViewStyle = style;
+    }
+    return self;
+}
 
 - (instancetype)init
 {
@@ -41,7 +58,7 @@
     view.backgroundColor = [UIColor redColor];
     self.view = view;
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:rect];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:rect style:self.tableViewStyle];
     tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     tableView.backgroundColor = [UIColor blueColor];
     tableView.delegate = self;
