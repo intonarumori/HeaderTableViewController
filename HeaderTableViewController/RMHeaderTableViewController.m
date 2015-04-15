@@ -162,7 +162,10 @@
     if(self.topViewController)
     {
         CGFloat offsetY = scrollView.contentOffset.y;
-        CGFloat height = MAX(-offsetY - self.topLayoutGuide.length, _headerHeight);
+        CGFloat top = -offsetY;
+        if(self.automaticallyAdjustsScrollViewInsets) top -= self.topLayoutGuide.length;
+        
+        CGFloat height = MAX(top, _headerHeight);
         self.topViewController.view.frame = CGRectMake(0, -height, self.tableView.bounds.size.width, height);
     }
 }
