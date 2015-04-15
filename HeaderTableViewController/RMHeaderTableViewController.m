@@ -154,18 +154,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSAssert(NO, @"RMHeaderTableViewController: you should override tableView:numberOfRowsInSection:");
+//    NSAssert(NO, @"RMHeaderTableViewController: you should override tableView:numberOfRowsInSection:");
     return 0;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSAssert(NO, @"RMHeaderTableViewController: you should override numberOfSectionsInTableView:");
+//    NSAssert(NO, @"RMHeaderTableViewController: you should override numberOfSectionsInTableView:");
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSAssert(NO, @"RMHeaderTableViewController: tableView:cellForRowAtIndexPath:");
+//    NSAssert(NO, @"RMHeaderTableViewController: tableView:cellForRowAtIndexPath:");
     return nil;
 }
 
