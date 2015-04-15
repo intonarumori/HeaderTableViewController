@@ -51,6 +51,15 @@
 
 #pragma mark -
 
+- (void)setHeaderHeight:(CGFloat)headerHeight
+{
+    _headerHeight = headerHeight;
+    [self updateTopView];
+}
+
+
+#pragma mark -
+
 - (void)loadView
 {
     CGRect rect = CGRectMake(0, 0, 320, 480);
@@ -124,17 +133,26 @@
         UIView *view = viewController.view;
         
         [self addChildViewController:viewController];
-        view.frame = CGRectMake(0, -_headerHeight, self.tableView.bounds.size.width, _headerHeight);
-        view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+        
+        [self updateTopView];
         [self.tableView addSubview:view];
         [viewController didMoveToParentViewController:self];
         
-        self.tableView.contentInset = UIEdgeInsetsMake(_headerHeight, 0, 0, 0);
     }
     else
     {
         self.tableView.contentInset = UIEdgeInsetsZero;
     }
+}
+
+- (void)updateTopView
+{
+    UIView *view = [self.topViewController view];
+    if(view == nil) return;
+    
+    view.frame = CGRectMake(0, -_headerHeight, self.tableView.bounds.size.width, _headerHeight);
+    view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+    self.tableView.contentInset = UIEdgeInsetsMake(_headerHeight, 0, 0, 0);
 }
 
 #pragma mark -
